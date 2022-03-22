@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EXAPI</string>
+    <string name="temperatura">Temperatura</string>
 </resources>
