@@ -1,19 +1,18 @@
 package com.example.exapi.data
 
 import com.example.exapi.data.response.CurrentWeatherResponse
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import kotlinx.coroutines.Deferred
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
-import retrofit2.http.Url
 
 const val API_KEY = "8ac149135d46fa405913aee0781f1498"
 
-//// https://api.openweathermap.org/data/2.5/weather?q=London&appid=8ac149135d46fa405913aee0781f1498&units=metric&lang=es
+// https://api.openweathermap.org/data/2.5/weather?q=London&appid=8ac149135d46fa405913aee0781f1498&units=metric&lang=es
 
 interface APIService {
     @GET("weather")
