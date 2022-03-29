@@ -16,9 +16,9 @@ class MainActivity : AppCompatActivity() {
 
         val apiService = APIService()
         GlobalScope.launch(Dispatchers.Main){
-            val currentWeatherResponse = apiService.getCurrentWeather("Logroño").await()
+            val currentWeatherResponse = apiService.getCurrentWeather("Paris").await()
             val tv : TextView = findViewById(R.id.textView)
-            tv.text = currentWeatherResponse.weather.toString()
+            tv.text = currentWeatherResponse.weather.get(0).description.toString()
         }
     }
 }
