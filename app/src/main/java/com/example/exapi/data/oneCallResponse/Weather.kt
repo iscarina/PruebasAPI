@@ -1,7 +1,4 @@
-package com.example.exapi.data.response
-
-
-import com.google.gson.annotations.SerializedName
+package com.example.exapi.data.oneCallResponse
 
 data class Weather(
     val description: String,

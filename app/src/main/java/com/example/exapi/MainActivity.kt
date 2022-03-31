@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import com.example.exapi.data.APIService
+import com.example.exapi.data.oneCallResponse.OneCallWeather
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -16,9 +17,9 @@ class MainActivity : AppCompatActivity() {
 
         val apiService = APIService()
         GlobalScope.launch(Dispatchers.Main){
-            val currentWeatherResponse = apiService.getCurrentWeather("Paris").await()
+            val OneCallWeather = apiService.getWeatherOneCall(12.0,12.0).await()
             val tv : TextView = findViewById(R.id.textView)
-            tv.text = currentWeatherResponse.weather.get(0).description.toString()
+            tv.text = OneCallWeather.hourly.get(2).temp.toString()
         }
     }
 }

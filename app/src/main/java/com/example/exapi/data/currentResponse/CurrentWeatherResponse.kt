@@ -1,4 +1,4 @@
-package com.example.exapi.data.response
+package com.example.exapi.data.currentResponse
 
 import com.google.gson.annotations.SerializedName
 
